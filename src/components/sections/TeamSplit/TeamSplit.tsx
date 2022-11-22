@@ -63,7 +63,13 @@ const TeamSplit = () => {
       </Stack>
       <Box>
         <Image src='/women.png' alt='' objectFit='contain' w='full' h='md' />
-        <Flex bg='chalkboard' flexDirection='column' alignItems='center' p={4}>
+        <Flex
+          bg='chalkboard'
+          flexDirection='column'
+          alignItems='center'
+          p={4}
+          rounded='xl'
+        >
           <Text fontSize='2xl' color='white !important' fontWeight='semibold'>
             Destini Butler <chakra.span color='brand.500'>&</chakra.span> Kelly
             Smith
