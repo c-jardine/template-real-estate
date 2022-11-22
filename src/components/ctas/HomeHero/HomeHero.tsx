@@ -85,6 +85,7 @@ const HomeHero = () => {
                 mt={2}
                 fontSize={['sm', 'md']}
                 color='subtleText !important'
+                lineHeight='tall'
               >
                 Est id aute cillum quis anim. Et consectetur amet nostrud tempor
                 nulla id amet pariatur esse. Amet proident adipisicing ullamco

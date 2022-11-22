@@ -17,7 +17,7 @@ const ContactForm = () => {
       p={8}
       rounded='xl'
       shadow='lg'
-      spacing={8}
+      spacing={4}
     >
       <Box>
         <chakra.h2
