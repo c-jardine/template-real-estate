@@ -15,7 +15,7 @@ const Header = (props: HeaderProps) => {
       </Flex>
       <chakra.h2
         textAlign={!props.center ? 'left' : 'center'}
-        color='headerText !important'
+        color={(props.light && 'white') || 'headerText'}
         textTransform='uppercase'
         letterSpacing='widest'
         fontSize='3xl'
@@ -25,11 +25,11 @@ const Header = (props: HeaderProps) => {
         {props.title}
       </chakra.h2>
       <Text
-        textStyle={'gradient'}
         lineHeight='shorter'
         letterSpacing='wider'
         textTransform='uppercase'
         mb={4}
+        color='subtleText !important'
         textAlign={!props.center ? 'left' : 'center'}
       >
         {props.subtitle}

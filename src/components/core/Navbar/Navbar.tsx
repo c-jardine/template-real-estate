@@ -19,10 +19,9 @@ import logo from '/public/logo.svg';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'Services', path: '/services' },
-  { name: 'Pricing', path: '/pricing' },
-  { name: 'Blog', path: '/blog' },
+  { name: 'Properties', path: '/properties' },
   { name: 'About', path: '/about' },
+  { name: 'FAQ', path: '/faq' },
   { name: 'Contact', path: '/contact' },
 ];
 

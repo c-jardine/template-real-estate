@@ -16,15 +16,8 @@ const HomePage: NextPage = () => {
         <HomeHero />
         <FeatureCards />
         <TeamCards />
-
-        {/* <Box bg='cardBackground' w='full'> */}
         <PropertyTypes />
         <Clients />
-        {/* </Box> */}
-
-        <Testimonials />
-        <Banner />
-        <Box h={0} />
       </PageLayout>
     </>
   );
