@@ -9,7 +9,7 @@ const ContactForm = () => {
     <Stack
       position={{ base: 'relative', lg: 'absolute' }}
       zIndex={1}
-      bottom={{base: 16, '2xl': 32 }}
+      bottom={{ base: 16, '2xl': 32 }}
       right={{ lg: 8, xl: 32 }}
       maxW='md'
       w='full'
@@ -28,7 +28,9 @@ const ContactForm = () => {
         >
           Get in touch with us today
         </chakra.h2>
-        <Text fontSize='sm'>Anim et anim magna magna consectetur dolor.</Text>
+        <Text fontSize='sm' color='subtleText !important'>
+          Anim et anim magna magna consectetur dolor.
+        </Text>
       </Box>
       <FormControl as={Stack} spacing={6}>
         <Input label='Name' autoComplete='name' />

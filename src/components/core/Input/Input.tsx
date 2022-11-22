@@ -21,6 +21,7 @@ const Input = (props: InputProps & { label: string }) => {
         <ChakraInput
           {...props}
           placeholder={props.label}
+          _placeholder={{ textTransform: 'uppercase', fontSize: 'xs' }}
           style={{ caretColor: 'headerText' }}
           color='headerText'
           fontSize='sm'
@@ -38,7 +39,9 @@ const Input = (props: InputProps & { label: string }) => {
           h={0.5}
           bgGradient='linear(to-r, brand.500 50%, rgba(0,0,0,0.1) 50%)'
           transition='200ms ease-in-out'
-          transform={(focused || !isEmpty) ? 'translateX(0%)' : 'translateX(-50%)'}
+          transform={
+            focused || !isEmpty ? 'translateX(0%)' : 'translateX(-50%)'
+          }
         />
       </Box>
     </FormControl>

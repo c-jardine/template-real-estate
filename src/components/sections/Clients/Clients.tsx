@@ -4,7 +4,7 @@ import { Header } from '../../core/Header';
 
 const Clients = () => {
   return (
-    <Stack w='full' alignItems='center' py={16} spacing={16}>
+    <Stack w='full' alignItems='center' spacing={16}>
       <Header
         center
         title='Our Clients'

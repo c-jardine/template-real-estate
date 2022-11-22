@@ -1,6 +1,4 @@
-import { IconType } from '@react-icons/all-files';
-
-export interface FeatureCardProps {
+export interface PropertyCardProps {
   id: number;
   heading: string;
   price: string;
@@ -11,5 +9,10 @@ export interface FeatureCardProps {
     address: string;
     category: string;
     agent: string;
+  };
+  layout: {
+    sqFt: number;
+    beds: number;
+    baths: number;
   };
 }

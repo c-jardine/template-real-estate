@@ -19,8 +19,8 @@ const SocialButton = ({
     <chakra.button
       bg='socialBackground'
       rounded={'full'}
-      w={10}
-      h={10}
+      w={8}
+      h={8}
       cursor={'pointer'}
       as={'a'}
       href={href}
@@ -41,37 +41,54 @@ const SocialButton = ({
 
 const BrandColumn = () => {
   return (
-    <Stack>
+    <Stack justifyContent='space-between' w='full' h='full' py={8} spacing={8}>
       <Flex
         flexDirection='column'
-        alignItems={{ base: 'center', lg: 'flex-start' }}
-        gap={8}
+        alignItems={{ base: 'center', lg: 'flex-end' }}
+        gap={4}
       >
-        <Image
-          src={logo}
-          alt='Logo'
-          style={{
-            objectFit: 'contain',
-            height: '2rem',
-            width: 'fit-content',
-          }}
-        />
+        <Flex alignItems='center' gap={4}>
+          <Image
+            src={logo}
+            alt='Logo'
+            style={{
+              objectFit: 'contain',
+              height: '2rem',
+              width: 'fit-content',
+            }}
+          />
+          <Text
+            fontSize='xl'
+            letterSpacing='widest'
+            textTransform='uppercase'
+            color='white !important'
+          >
+            Logoipsum
+          </Text>
+        </Flex>
 
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Twitter'} href={'#'}>
-            <FaTwitter size={24} />
+            <FaTwitter size={16} />
           </SocialButton>
           <SocialButton label={'YouTube'} href={'#'}>
-            <FaYoutube size={24} />
+            <FaYoutube size={16} />
           </SocialButton>
           <SocialButton label={'Instagram'} href={'#'}>
-            <FaInstagram size={24} />
+            <FaInstagram size={16} />
           </SocialButton>
         </Stack>
-        <Text color='whiteAlpha.600' fontSize='sm' w='full'>
-          Developed by Keplux Development
-        </Text>
       </Flex>
+      <Text
+        color='subtleText !important'
+        fontWeight='medium'
+        fontSize='sm'
+        w='full'
+        textAlign={{ base: 'center', lg: 'right' }}
+        textTransform='uppercase'
+      >
+        Developed by Keplux Development
+      </Text>
     </Stack>
   );
 };

@@ -33,7 +33,7 @@ const Label = (props) => {
 
 const PropertyTypes = () => {
   return (
-    <Stack w='full' alignItems='center' py={16} spacing={16}>
+    <Stack w='full' alignItems='center' spacing={16}>
       <Header
         center
         title='Available Properties'
@@ -44,8 +44,8 @@ const PropertyTypes = () => {
           as={ChakraLink}
           role='group'
           position='relative'
-          h='calc(640px + 1rem)'
           overflow='hidden'
+          maxH={{ base: 96, xl: 'container.sm' }}
         >
           <Image
             src='https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'
@@ -58,13 +58,14 @@ const PropertyTypes = () => {
           />
           <Label title='Houses' available={13} />
         </Box>
-        <SimpleGrid columns={2} gap={4} h='container.sm' autoRows='50%'>
+        <SimpleGrid columns={2} gap={4} maxH={{ xl: 'container.sm' }}>
           <Box
             as={ChakraLink}
             role='group'
             position='relative'
             gridColumn='1 / span 2'
             overflow='hidden'
+            maxH={96}
           >
             <Image
               src='https://images.unsplash.com/photo-1619218070141-bcfeb8b93074?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=615&q=80'
@@ -83,6 +84,7 @@ const PropertyTypes = () => {
             position='relative'
             gridColumn={{ base: '1 / span 2', md: 'auto' }}
             overflow='hidden'
+            maxH={96}
           >
             <Image
               src='https://images.unsplash.com/photo-1574958269340-fa927503f3dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1048&q=80'
@@ -101,6 +103,7 @@ const PropertyTypes = () => {
             position='relative'
             gridColumn={{ base: '1 / span 2', md: 'auto' }}
             overflow='hidden'
+            maxH={96}
           >
             <Image
               src='https://images.unsplash.com/photo-1540470174401-f25e9eb17c1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1467&q=80'

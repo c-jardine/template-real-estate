@@ -7,10 +7,10 @@ import {
 } from '@chakra-ui/react';
 import { BsArrowRight } from '@react-icons/all-files/bs/BsArrowRight';
 import { Header } from '../../core/Header';
-import FeatureCard from './FeatureCard';
-import { FeatureCardProps } from './FeatureCard.types';
+import PropertyCard from './PropertyCard';
+import { PropertyCardProps } from './PropertyCard.types';
 
-const features: FeatureCardProps[] = [
+const features: PropertyCardProps[] = [
   {
     id: 0,
     heading: 'Modern Home, Great Neighborhood',
@@ -18,11 +18,17 @@ const features: FeatureCardProps[] = [
     imgSrc:
       'https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
     imgAlt: 'An RGB keyboard',
-    content: 'Neque convallis a cras semper auctor neque vitae tempus quam.',
+    content:
+      'Neque convallis a cras semper auctor neque vitae tempus quam. Aliqua labore mollit minim elit consectetur velit magna anim do.',
     details: {
       address: '123 Main St | Toledo, OH 43604',
       category: 'House',
       agent: 'Ronnie Merritt',
+    },
+    layout: {
+      sqFt: 1920,
+      beds: 4,
+      baths: 3,
     },
   },
   {
@@ -33,11 +39,16 @@ const features: FeatureCardProps[] = [
       'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
     imgAlt: 'Wireframing',
     content:
-      'Sit amet consectetur adipiscing elit pellentesque habitant morbi.',
+      'Sit amet consectetur adipiscing elit pellentesque. Esse anim laborum nostrud lorem aute.',
     details: {
       address: '506 Hillview Dr | Sylvania, OH 43505',
       category: 'House',
       agent: 'Rachel Martinez',
+    },
+    layout: {
+      sqFt: 2425,
+      beds: 5,
+      baths: 4,
     },
   },
   {
@@ -54,6 +65,11 @@ const features: FeatureCardProps[] = [
       category: 'Apartment',
       agent: 'Calvin Lewis',
     },
+    layout: {
+      sqFt: 1300,
+      beds: 2,
+      baths: 2,
+    },
   },
   {
     id: 3,
@@ -63,29 +79,38 @@ const features: FeatureCardProps[] = [
       'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80',
     imgAlt: 'Typing at a computer',
     content:
-      'Viverra maecenas accumsan lacus vel facilisis volutpat est velit.',
+      'Viverra maecenas accumsan lacus vel facilisis volutpat est velit. Ea ullamco aute qui amet fugiat incididunt cillum excepteur culpa ullamco sint dolore quis labore.',
     details: {
       address: '3994 Willow Oaks Blvd | Toledo, OH 43612',
       category: 'House',
       agent: 'Rachel Martinez',
     },
+    layout: {
+      sqFt: 976,
+      beds: 2,
+      baths: 1.5,
+    },
   },
 ];
 
-const FeatureCards = () => {
+const PropertyCards = () => {
   return (
     <Box maxW='1920px'>
       <Box px={{ base: 5, md: 10 }}>
-        <Header
-          title='Browse properties'
-          subtitle='Find Your Dream Home'
-          // description='Dolor nulla consequat enim culpa incididunt nulla nulla nulla. Sint sint sint non aliquip aute ut ut irure. Exercitation commodo nulla ex ipsum in. Officia consectetur esse dolor reprehenderit Lorem est adipisicing eiusmod est et. Cupidatat et proident officia incididunt incididunt eiusmod qui amet nostrud occaecat voluptate irure.'
-        />
+        <Header title='Browse properties' subtitle='Find Your Dream Home' />
       </Box>
 
-      <SimpleGrid columns={{ base: 1, md: 2, '2xl': 4 }} mt={16} rowGap={16}>
+      <SimpleGrid
+        columns={{ base: 1, md: 2, '2xl': 4 }}
+        px={{ base: 4 }}
+        alignItems='flex-start'
+        mt={16}
+        rowGap={16}
+        columnGap={4}
+        maxW='1920px'
+      >
         {features.map((feature, index) => (
-          <FeatureCard key={index} {...feature} />
+          <PropertyCard key={index} {...feature} />
         ))}
       </SimpleGrid>
       <Box maxW='8xl' w='full' mx='auto'>
@@ -108,4 +133,4 @@ const FeatureCards = () => {
   );
 };
 
-export default FeatureCards;
+export default PropertyCards;

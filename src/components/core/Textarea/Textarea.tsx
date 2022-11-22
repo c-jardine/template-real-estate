@@ -20,6 +20,7 @@ const Textarea = (props: TextareaProps & { label: string }) => {
         <ChakraTextarea
           {...props}
           placeholder='Enter your message'
+          _placeholder={{ textTransform: 'uppercase', fontSize: 'xs' }}
           style={{ caretColor: 'headerText' }}
           color='headerText'
           fontSize='sm'
@@ -33,12 +34,14 @@ const Textarea = (props: TextareaProps & { label: string }) => {
           onChange={(event) => setIsEmpty(event.target.value.length === 0)}
         />
         <Box
-        mt={1}
+          mt={1}
           w='200%'
           h={0.5}
           bgGradient='linear(to-r, brand.500 50%, rgba(0,0,0,0.1) 50%)'
           transition='200ms ease-in-out'
-          transform={(focused || !isEmpty) ? 'translateX(0%)' : 'translateX(-50%)'}
+          transform={
+            focused || !isEmpty ? 'translateX(0%)' : 'translateX(-50%)'
+          }
         />
       </Box>
     </FormControl>
