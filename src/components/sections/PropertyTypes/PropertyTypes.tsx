@@ -39,9 +39,11 @@ const PropertyTypes = () => {
         title='Available Properties'
         subtitle='View our selection'
       />
-      <SimpleGrid columns={{ base: 1, xl: 2 }} gap={4} maxW='8xl' w='full'>
+      <SimpleGrid columns={{ base: 1, xl: 4 }} gap={4} maxW='8xl' w='full'>
         <Box
           as={ChakraLink}
+          gridRow={{ base: '1', xl: '1 / span 2' }}
+          gridColumn={{ base: '1', xl: '1 / span 2' }}
           role='group'
           position='relative'
           overflow='hidden'
@@ -58,12 +60,20 @@ const PropertyTypes = () => {
           />
           <Label title='Houses' available={13} />
         </Box>
-        <SimpleGrid columns={2} gap={4} maxH={{ xl: 'container.sm' }}>
+        <SimpleGrid
+          gridRow={{ xl: '1 / span 2' }}
+          gridColumn={{ base: '1', xl: '3 / span 2' }}
+          columns={2}
+          gap={4}
+          maxH={{ xl: 'container.sm' }}
+          templateRows='1fr 1fr'
+        >
           <Box
             as={ChakraLink}
             role='group'
             position='relative'
             gridColumn='1 / span 2'
+            gridRow={{ base: '1', xl: '1' }}
             overflow='hidden'
             maxH={96}
           >
@@ -82,7 +92,8 @@ const PropertyTypes = () => {
             as={ChakraLink}
             role='group'
             position='relative'
-            gridColumn={{ base: '1 / span 2', md: 'auto' }}
+            gridColumn={{ base: '1 / span 2', md: '1' }}
+            gridRow={{ base: '2', xl: '2' }}
             overflow='hidden'
             maxH={96}
           >
@@ -101,7 +112,8 @@ const PropertyTypes = () => {
             as={ChakraLink}
             role='group'
             position='relative'
-            gridColumn={{ base: '1 / span 2', md: 'auto' }}
+            gridColumn={{ base: '1 / span 2', md: '2', xl: '2' }}
+            gridRow={{ base: '3', md: '2' }}
             overflow='hidden'
             maxH={96}
           >
