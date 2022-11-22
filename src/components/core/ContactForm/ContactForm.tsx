@@ -9,7 +9,7 @@ const ContactForm = () => {
     <Stack
       position={{ base: 'relative', lg: 'absolute' }}
       zIndex={1}
-      bottom={{ lg: 32 }}
+      bottom={{base: 16, '2xl': 32 }}
       right={{ lg: 8, xl: 32 }}
       maxW='md'
       w='full'

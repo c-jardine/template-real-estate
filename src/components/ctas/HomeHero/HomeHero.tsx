@@ -24,7 +24,7 @@ const HomeHero = () => {
       <Box
         position='relative'
         w='100vw'
-        // minH='calc(100vh - 4rem)'
+        minH='calc(100vh - 4rem)'
         mt={{ lg: 16 }}
       >
         <Box w='full' maxW='3840px' mx='auto' h='full' bg='black'>
@@ -34,7 +34,6 @@ const HomeHero = () => {
             alt='Statue holding the scales of justice'
             overflow='hidden'
             w='full'
-            // h='full'
             h='calc(100vh - 4rem)'
           />
         </Box>
