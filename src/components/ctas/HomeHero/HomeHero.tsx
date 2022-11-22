@@ -21,12 +21,7 @@ const features = [
 const HomeHero = () => {
   return (
     <>
-      <Box
-        position='relative'
-        w='100vw'
-        minH='calc(100vh - 4rem)'
-        mt={{ lg: 16 }}
-      >
+      <Box position='relative' w='100vw' minH='calc(100vh - 4rem)'>
         <Box w='full' maxW='3840px' mx='auto' h='full' bg='black'>
           <Image
             objectFit='cover'

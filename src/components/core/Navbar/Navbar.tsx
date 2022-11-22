@@ -77,7 +77,7 @@ const Navbar = () => {
 
   return (
     <Box
-      position={{ base: 'sticky', lg: 'fixed' }}
+      position='sticky'
       top={0}
       zIndex={50}
       width='100vw'
