@@ -1,6 +1,7 @@
 import { chakra, Box, Stack, Text, FormControl } from '@chakra-ui/react';
 import React from 'react';
 import { Button } from '../Button';
+import { Header } from '../Header';
 import { Input } from '../Input';
 import { Textarea } from '../Textarea';
 
@@ -19,19 +20,7 @@ const ContactForm = () => {
       shadow='lg'
       spacing={4}
     >
-      <Box>
-        <chakra.h2
-          fontSize='2xl'
-          fontWeight='semibold'
-          letterSpacing='wide'
-          color='brand.500'
-        >
-          Get in touch with us today
-        </chakra.h2>
-        <Text fontSize='sm' color='subtleText !important'>
-          Anim et anim magna magna consectetur dolor.
-        </Text>
-      </Box>
+      <Header title='Get in touch' subtitle='Anim et anim magna' />
       <FormControl as={Stack} spacing={6}>
         <Input label='Name' autoComplete='name' />
         <Input label='Phone' autoComplete='phone' />

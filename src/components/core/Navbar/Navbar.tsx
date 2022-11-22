@@ -1,25 +1,72 @@
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
   Box,
+  chakra,
   Flex,
   HStack,
+  Icon,
   IconButton,
   Link,
+  Menu,
+  MenuButton,
   MenuItem,
+  MenuList,
   Stack,
   Text,
-  useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
 import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose';
+import { FaChevronDown } from '@react-icons/all-files/fa/FaChevronDown';
 import { GiHamburgerMenu } from '@react-icons/all-files/gi/GiHamburgerMenu';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import logo from '/public/logo.svg';
+import { SimpleGrid } from '@chakra-ui/react';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'Properties', path: '/properties' },
+  {
+    name: 'Properties',
+    sections: [
+      {
+        name: 'Style',
+        items: [
+          { name: 'Single-family', path: '/properties/houses' },
+          { name: 'Multi-family', path: '/properties/houses' },
+          { name: 'Townhouse', path: '/properties/apartments' },
+          { name: 'Duplex', path: '/properties/land' },
+          { name: 'Condominium', path: '/properties/land' },
+          { name: 'Farmhouse', path: '/properties/commercial' },
+          { name: 'Ranch', path: '/properties/commercial' },
+          { name: 'Tiny home', path: '/properties/land' },
+        ],
+      },
+      {
+        name: 'Type',
+        items: [
+          { name: 'Houses', path: '/properties/houses' },
+          { name: 'Apartments', path: '/properties/apartments' },
+          { name: 'Commercial Spaces', path: '/properties/commercial' },
+          { name: 'Land', path: '/properties/land' },
+        ],
+      },
+      {
+        name: 'Area',
+        items: [
+          { name: 'Toledo', path: '/properties/houses' },
+          { name: 'Perrysburg', path: '/properties/apartments' },
+          { name: 'Maumee', path: '/properties/commercial' },
+          { name: 'Sylvania', path: '/properties/land' },
+          { name: 'Swanton', path: '/properties/land' },
+        ],
+      },
+    ],
+  },
   { name: 'About', path: '/about' },
   { name: 'FAQ', path: '/faq' },
   { name: 'Contact', path: '/contact' },
@@ -77,9 +124,82 @@ const Navbar = () => {
             alignItems='center'
             display={{ base: 'none', md: 'flex' }}
           >
-            {navLinks.map((link, index) => (
-              <NavLink key={index} {...link} onClose={onClose} />
-            ))}
+            {navLinks.map((link, index) => {
+              return !link.sections ? (
+                <NavLink key={index} {...link} onClose={onClose} />
+              ) : (
+                <Menu key={index} autoSelect={false} isLazy>
+                  {({ isOpen, onClose }) => (
+                    <>
+                      <MenuButton
+                        py={2}
+                        transition='150ms ease-in-out'
+                        _hover={{ color: 'brand.500' }}
+                        role='group'
+                      >
+                        <Flex alignItems='center'>
+                          <Text
+                            fontWeight='normal'
+                            lineHeight='inherit'
+                            textTransform='uppercase'
+                            letterSpacing={4}
+                            transition='150ms ease-in-out'
+                            _groupHover={{ color: 'brand.500 !important' }}
+                          >
+                            {link.name}
+                          </Text>
+                          <Icon
+                            as={FaChevronDown}
+                            h={3}
+                            w={3}
+                            ml={1}
+                            color='subtleText'
+                            transition='all .25s ease-in-out'
+                            transform={isOpen ? 'rotate(180deg)' : ''}
+                            _groupHover={{ color: 'brand.500' }}
+                          />
+                        </Flex>
+                      </MenuButton>
+                      <MenuList
+                        zIndex={5}
+                        border='none'
+                        shadow='lg'
+                        px={8}
+                        py={4}
+                        overflow='hidden'
+                      >
+                        <>
+                          <SimpleGrid columns={link.sections.length} gap={28}>
+                            {link.sections.map((section, index) => (
+                              <Box key={index}>
+                                <chakra.span fontWeight='bold'>
+                                  {section.name}
+                                </chakra.span>
+                                <Box
+                                  h={1}
+                                  w={28}
+                                  bg='brand.500'
+                                  mt={1}
+                                  mb={2}
+                                />
+                                {section.items.map((item, index) => (
+                                  <MenuLink
+                                    key={index}
+                                    name={item.name}
+                                    path={item.path}
+                                    onClose={onClose}
+                                  />
+                                ))}
+                              </Box>
+                            ))}
+                          </SimpleGrid>
+                        </>
+                      </MenuList>
+                    </>
+                  )}
+                </Menu>
+              );
+            })}
           </HStack>
         </HStack>
         <IconButton
@@ -99,9 +219,38 @@ const Navbar = () => {
       {isOpen ? (
         <Box pb={4} display={{ base: 'inherit', md: 'none' }}>
           <Stack as='nav' spacing={2}>
-            {navLinks.map((link, index) => (
-              <NavLink key={index} {...link} onClose={onClose} />
-            ))}
+            {navLinks.map((link, index) => {
+              return !link.sections ? (
+                <NavLink key={index} {...link} onClose={onClose} />
+              ) : (
+                <Accordion allowToggle border='none'>
+                  <AccordionItem border='none'>
+                    <Flex justifyContent='space-between' alignItems='center'>
+                      <AccordionButton
+                        _hover={{ bg: 'transparent' }}
+                        fontSize='sm'
+                        color='bodyText'
+                        p={0}
+                        textTransform='uppercase'
+                        letterSpacing={4}
+                      >
+                        {link.name}
+                      </AccordionButton>
+                      <AccordionIcon w={5} h={5} />
+                    </Flex>
+                    <AccordionPanel display='flex' flexDirection='column'>
+                      {link.sections
+                        .filter((item) => item.name === 'Type')
+                        .map((link, index) => {
+                          return link.items.map((item) => (
+                            <NavLink key={index} {...item} onClose={onClose} />
+                          ));
+                        })}
+                    </AccordionPanel>
+                  </AccordionItem>
+                </Accordion>
+              );
+            })}
           </Stack>
         </Box>
       ) : null}
@@ -112,7 +261,7 @@ const Navbar = () => {
 // NavLink Component
 interface NavLinkProps {
   name: string;
-  path: string;
+  path?: string;
   onClose: () => void;
 }
 
@@ -144,14 +293,21 @@ interface MenuLinkProps {
 
 const MenuLink = ({ name, path, onClose }: MenuLinkProps) => {
   return (
-    <Link href={path} onClick={() => onClose()}>
+    <Link href={path} onClick={() => onClose()} role='group'>
       <MenuItem
-        _hover={{
-          color: 'blue.400',
-          bg: useColorModeValue('gray.200', 'gray.700'),
+        p={0}
+        _groupHover={{
+          bg: 'transparent',
         }}
       >
-        <Text>{name}</Text>
+        <Text
+          textTransform='uppercase'
+          letterSpacing={2}
+          transition='150ms ease-in-out'
+          _groupHover={{ color: 'brand.500 !important' }}
+        >
+          {name}
+        </Text>
       </MenuItem>
     </Link>
   );

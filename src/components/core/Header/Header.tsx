@@ -11,7 +11,7 @@ const Header = (props: HeaderProps) => {
         color='brand.500'
         mb={1}
       >
-        <Box h={1} w={32} mb={2.5} bg='brand.500' mx={props.center && 'auto'} />
+        <Box h={1} w={32} mb={2} bg='brand.500' mx={props.center && 'auto'} />
       </Flex>
       <chakra.h2
         textAlign={!props.center ? 'left' : 'center'}
