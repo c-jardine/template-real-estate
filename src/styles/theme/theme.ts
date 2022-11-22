@@ -3,8 +3,11 @@ import { generatePalette } from '../../../lib/helpers/colors';
 
 const colors = {
   brand: {
-    ...generatePalette({ r: 221, g: 107, b: 32 }),
+    ...generatePalette({ r: 252, g: 95, b: 8 }),
   },
+  // brand: {
+  //   ...generatePalette({ r: 4, g: 142, b: 231 }),
+  // },
   chalkboard: '#18191d',
 };
 

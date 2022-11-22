@@ -61,14 +61,22 @@ const TeamSplit = () => {
           </Text>
         </Box>
       </Stack>
-      <Box>
-        <Image src='/women.png' alt='' objectFit='contain' w='full' h='md' />
+      <Flex flexDirection='column' alignItems='space-around'>
+        <Image
+          src='/women.png'
+          alt=''
+          objectFit='contain'
+          w='full'
+          h='full'
+          maxH='md'
+        />
         <Flex
           bg='chalkboard'
           flexDirection='column'
           alignItems='center'
           p={4}
           rounded='xl'
+          mt={-0.5}
         >
           <Text fontSize='2xl' color='white !important' fontWeight='semibold'>
             Destini Butler <chakra.span color='brand.500'>&</chakra.span> Kelly
@@ -76,7 +84,7 @@ const TeamSplit = () => {
           </Text>
           <Text mt={-2}>Secretaries, Realtors</Text>
         </Flex>
-      </Box>
+      </Flex>
     </SimpleGrid>
   );
 };

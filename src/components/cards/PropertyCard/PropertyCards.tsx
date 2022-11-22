@@ -123,7 +123,7 @@ const PropertyCards = () => {
           mt={12}
           role='group'
         >
-          <Text textStyle='link' variant='upperWide'>
+          <Text textStyle='link' variant='upperWide' px={{ base: 4, '2xl': 0 }}>
             View all properties
           </Text>
           <ChakraIcon as={BsArrowRight} h={5} w={5} color='bodyText' />

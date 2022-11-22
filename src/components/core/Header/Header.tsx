@@ -1,6 +1,5 @@
-import { Box, chakra, Flex, Icon, Text } from '@chakra-ui/react';
+import { Box, chakra, Flex, Text } from '@chakra-ui/react';
 import { HeaderProps } from './Header.types';
-import { FaChevronUp } from '@react-icons/all-files/fa/FaChevronUp';
 
 const Header = (props: HeaderProps) => {
   return (

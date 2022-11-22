@@ -55,7 +55,7 @@ const Team: TeamCardProps[] = [
 
 const TeamCards = () => {
   return (
-    <Box maxW='8xl' mx='auto' px={{ base: 4, xl: 0 }}>
+    <Box maxW='8xl' mx='auto' px={{ base: 4, '2xl': 0 }}>
       <Header
         center
         title='Our Agents'

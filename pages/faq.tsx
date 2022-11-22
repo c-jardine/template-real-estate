@@ -91,7 +91,7 @@ const FaqPage: NextPage = () => {
 
   return (
     <InnerPageLayout {...props}>
-      <Box maxW='6xl' w='full' mx='auto'>
+      <Box maxW='6xl' w='full' mx='auto' pb={16}>
         <Box px={{ base: 4, xl: 0 }}>
           <Header
             title='Common questions'

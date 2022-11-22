@@ -20,7 +20,7 @@ const SocialLink = (props: TeamCardSocialLinkProps) => {
         as={props.icon}
         color='white'
         transition='200ms ease-in-out'
-        _groupHover={{ color: 'chalkboard' }}
+        _groupHover={{ color: 'brand.500' }}
       />
     </ChakraLink>
   );
@@ -29,39 +29,24 @@ const SocialLink = (props: TeamCardSocialLinkProps) => {
 const TeamCard = (props: TeamCardProps) => {
   return (
     <Box>
-      <Image
-        src={props.imgSrc}
-        alt={props.imgAlt}
-        objectFit='contain'
-        w='full'
-        maxH='sm'
-      />
-      <Box bg='chalkboard' px={4} pt={4} pb={12} rounded='xl'>
-        <Text
-          color='white !important'
-          textAlign='center'
-          fontSize='lg'
-          fontWeight='semibold'
-        >
-          {props.name}
-        </Text>
-        <Text
-          color='subtleText !important'
-          textAlign='center'
-          lineHeight={0.5}
-          fontSize='sm'
-        >
-          2 properties
-        </Text>
+      <Box w='xs' h='xs' overflow='hidden'>
+        <Image
+          src={props.imgSrc}
+          alt={props.imgAlt}
+          objectFit='contain'
+          w='full'
+          maxH='md'
+        />
       </Box>
+      <Box h={1} w='full' bg='brand.500' mx='auto' shadow='dark-lg' />
       <Box px={8}>
         <Flex
-          bg='brand.500'
+          w='full'
+          bg='headerText'
           p={3}
-          mt={-5}
           justifyContent='center'
           gap={8}
-          rounded='lg'
+          roundedBottom='xl'
         >
           <SocialLink
             ariaLabel={`View ${props.name}'s LinkedIn profile`}
@@ -84,6 +69,18 @@ const TeamCard = (props: TeamCardProps) => {
             href='#'
           />
         </Flex>
+      </Box>
+      <Box rounded='xl' overflow='hidden'>
+        <Text
+          mt={2}
+          color='headerText !important'
+          textAlign='center'
+          textTransform='uppercase'
+          letterSpacing='wider'
+          fontWeight='light'
+        >
+          {props.name}
+        </Text>
       </Box>
     </Box>
   );

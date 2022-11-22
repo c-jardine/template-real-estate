@@ -33,7 +33,7 @@ const InnerPageLayout = (props: InnerPageLayoutProps) => {
               px={{ base: 4, lg: 0 }}
               py={32}
             >
-              <Box position='relative' top={-6}>
+              <Box position='relative' top={-8}>
                 <Header
                   center
                   light
@@ -51,7 +51,7 @@ const InnerPageLayout = (props: InnerPageLayoutProps) => {
         zIndex={1}
         style={{ WebkitTransform: 'translate3d(0,0,0)' }}
         bg='background'
-        py={16}
+        pt={16}
       >
         {props.children}
       </Box>

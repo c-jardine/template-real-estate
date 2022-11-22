@@ -26,6 +26,7 @@ const About: NextPage = () => {
         spacing={28}
         alignItems='center'
         px={{ base: 4, xl: 0 }}
+        pb={16}
       >
         <TeamSplit />
 

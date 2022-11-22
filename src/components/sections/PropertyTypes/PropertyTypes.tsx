@@ -14,14 +14,13 @@ const Label = (props) => {
     <Box position='absolute' bottom={0} w='full' bg='rgba(24,25,29,0.95)' p={4}>
       <Text
         color='white !important'
-        fontSize='xl'
+        fontSize='lg'
         textTransform='uppercase'
         letterSpacing='widest'
-        fontWeight='semibold'
       >
         {props.title}
       </Text>
-      <Text>
+      <Text fontSize='sm'>
         <chakra.span color='brand.500' fontWeight='semibold'>
           {props.available}
         </chakra.span>{' '}
