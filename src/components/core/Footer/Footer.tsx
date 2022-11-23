@@ -18,7 +18,7 @@ const Footer = () => {
             <BrandColumn />
           </Flex>
           <SimpleGrid
-            columns={{ base: 1, sm: 3 }}
+            columns={{ base: 1, md: 3 }}
             gridColumn={{ base: '1', lg: '2 / span 2' }}
             gap={8}
             p={8}
